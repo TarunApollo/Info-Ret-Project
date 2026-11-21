@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#141318">
+  <link rel="icon" href="assets/panel-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <title>Panel · Manga Discovery</title>
+  <script type="module" src="app.mjs"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <a class="brand" href="./" aria-label="Panel home"><span class="brand-icon" aria-hidden="true"></span>panel<span>.</span></a>
+    </div>
+  </header>
+  <main class="shell">
+    <section class="hero" aria-labelledby="hero-title">
+      <h1 id="hero-title">Find your next<br><em>manga.</em></h1>
+      <form id="search-form" class="search-form" role="search" action="/">
+        <label class="sr-only" for="search-input">Search by title, creator, or description</label>
+        <input id="search-input" type="search" name="q" maxlength="120" placeholder="Title, creator, or description">
+        <button type="submit">Search</button>
+      </form>
+    </section>
+    <section id="catalog" class="catalog" aria-labelledby="catalog-title">
+      <h2 id="catalog-title" tabindex="-1">Browse the catalog</h2>
+      <form id="catalog-filters" aria-label="Catalog filters" hidden></form>
+      <p id="catalog-status" role="status"></p>
+      <div id="results"></div>
+      <nav id="pagination" class="pagination" aria-label="Catalog pages" hidden>
+        <button type="button" id="previous-page">Previous</button>
+        <button type="button" id="next-page">Next</button>
+      </nav>
+    </section>
+  </main>
+  <dialog id="series-detail" aria-labelledby="detail-title">
+    <form method="dialog"><button type="submit">Close</button></form>
+    <h2 id="detail-title" tabindex="-1">Series details</h2>
+    <p id="detail-creator"></p>
+    <p id="detail-description" role="status"></p>
+    <ul id="detail-sources"></ul>
+  </dialog>
+</body>
+</html>

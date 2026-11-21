@@ -1,0 +1,10 @@
+BOT_NAME = "panel_collection"
+SPIDER_MODULES = ["panel_collection.spiders"]
+NEWSPIDER_MODULE = "panel_collection.spiders"
+
+ROBOTSTXT_OBEY = True
+CONCURRENT_REQUESTS_PER_DOMAIN = 2
+DOWNLOAD_DELAY = 1.0
+FEED_EXPORT_ENCODING = "utf-8"
+TELNETCONSOLE_ENABLED = False
+REMOTE_CONTROL_ENABLED = False

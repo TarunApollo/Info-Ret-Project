@@ -1,0 +1,11 @@
+services:
+  solr:
+    image: solr:10.1.0-slim
+    command: ["solr-precreate", "panel"]
+    ports:
+      - "127.0.0.1:8983:8983"
+    volumes:
+      - panel-solr:/var/solr
+
+volumes:
+  panel-solr:
