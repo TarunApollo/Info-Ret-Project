@@ -4,7 +4,7 @@ Information Retrieval course project by Tarun, Ale, and Jeffre. See [the assignm
 
 ## Shared baseline
 
-The development baseline runs from a local Scrapy fixture through Solr to Panel. It supports browsing, title search, and opening series details and source links. Use that pipeline to connect at least three crawl sources for the final prototype.
+The baseline runs from Scrapy spiders through Solr to Panel. It supports browsing, title search, and opening series details and source links. The catalog is crawled from three publisher sites: VIZ Media, Seven Seas Entertainment, and Yen Press. A merged snapshot lives in `collection/data/catalog.json`.
 
 Agree on the manga record format and the search response before building the three parts. At minimum, the interface needs a stable ID, title, creator, description, and source links. Include genre, publisher, and debut year where available for filtering.
 
