@@ -113,30 +113,56 @@ button { cursor: pointer; }
 .catalog { padding-block: .5rem 2.5rem; }
 .catalog h2, dialog h2 { margin: 0; font: 700 1.9rem/1.18 var(--display); letter-spacing: -.04em; }
 #catalog-status { color: #c3b8c1; margin: .45rem 0 1rem; }
-.results {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
-  gap: .65rem;
-  padding: 0;
-  margin: 0;
-  list-style: none;
+.results-scroll {
+  overflow-x: auto;
+  border: 1px solid #473c49;
+  border-radius: 9px;
+  background: #1a171e;
 }
-.result, .pagination button, dialog button {
+.results {
+  width: 100%;
+  min-width: 40rem;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: .95rem;
+  line-height: 1.4;
+}
+.results th, .results td {
+  padding: .7rem .85rem;
+  border-bottom: 1px solid #2f2934;
+  vertical-align: top;
+}
+.results tbody tr:last-child > * { border-bottom: 0; }
+.results thead th {
+  color: #c3b8c1;
+  background: #201c24;
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.results tbody tr:hover { background: #221d26; }
+.results td { color: #ddd2db; }
+.results td:last-child { font-variant-numeric: tabular-nums; }
+.results tbody th { width: 34%; font-weight: 400; }
+.result-title {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--paper);
+  text-align: left;
+  font: 700 1.05rem/1.3 var(--display);
+}
+.result-title:hover { color: var(--accent); text-decoration: underline; }
+.pagination button, dialog button {
   border: 1px solid #473c49;
   border-radius: 9px;
   background: #201c24;
   color: var(--paper);
   padding: .7rem .85rem;
 }
-.result {
-  display: block;
-  width: 100%;
-  min-height: 100%;
-  text-align: left;
-  font: 700 1.1rem/1.3 var(--display);
-}
-.result:hover, .pagination button:hover, dialog button:hover { border-color: var(--accent); }
-.result span { display: block; margin-top: .35rem; color: #c3b8c1; font: 400 .9rem/1.4 "DM Sans", system-ui, sans-serif; }
+.pagination button:hover, dialog button:hover { border-color: var(--accent); }
 .pagination:not([hidden]) { display: flex; gap: .6rem; margin-top: 1rem; }
 .pagination button:disabled { opacity: .5; cursor: default; }
 dialog {
